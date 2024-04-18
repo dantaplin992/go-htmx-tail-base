@@ -1,8 +1,20 @@
 # Go-HTMX-Hyperscript-Tailwind Base
 
-A base project for making highly interactible websires with Go, HTMX, Hyperscript and Tailwind.
+A base project for making highly interactible websites with Go, HTMX, Hyperscript and Tailwind.
 
-The project is set up to use Go as a server, with HTMX to handle AJAX requests, Hyperscript to handle DOM manipulation, and Tailwind for styling. There are 0 dependencies on either the client or server side, as Go offers an http server out of the box, HTMX & Hyperscript are both standalone libraries that are included in the project directly via script tags in the index.html, and Tailwind is compiled into a single css file that is also included in index.html.
+The project is set up to use Go as a server, with HTMX & Hyperscript to handle DOM manipulation, and Tailwind for styling. There are 0 dependencies on either the client or server side, as Go offers an http server out of the box, HTMX & Hyperscript are both standalone libraries that are included in the project directly via script tags in the index.html, and Tailwin compiles the CSS into a single file that is also included in index.html directly.
+
+A Dockerfile is also included for easy(ish) deployment.
+
+### How It Works
+
+HTMX extends HTML elements to allow for AJAX requests to be made to the server, and for the server to respond with HTML that can be inserted into the DOM. The `hx-trigger` attribute is used to specify what event should trigger the request, and the `hx-get` and `hx-post` attributes are used to specify the route & method to request. The server responds with an HTML string, which is then inserted into the DOM at the location specified by the `hx-target` attribute, with the optional `hx-swap` attribute specifying how the new content should be inserted.
+
+Hyperscript is a complementary library that allows for smaller, client-side DOM manipulation such as the addition/removal of classes on elements, or changes to an element's text content. It is used in conjunction with HTMX where an AJAX request is not necessary, but the DOM still needs to be manipulated. The user can define trigger events, target elements, scoped variables, loops etc with plain-english syntax.
+
+Tailwind is used because styling everything with vanilla CSS is a hellish experience.
+
+Using this framework it's possible to create a fast & highly interactible website with minimal effort & without writing a single line of JavaScript (The dream is alive).
 
 ## Prerequisites
 
