@@ -6,6 +6,7 @@ The project is set up to use Go as a server, with HTMX & Hyperscript to handle D
 
 A Dockerfile is also included for easy(ish) deployment.
 
+
 ### How It Works
 
 HTMX extends HTML elements to allow for AJAX requests to be made to the server, and for the server to respond with HTML that can be inserted into the DOM. The `hx-trigger` attribute is used to specify what event should trigger the request, and the `hx-get` and `hx-post` attributes are used to specify the route & method to request. The server responds with an HTML string, which is then inserted into the DOM at the location specified by the `hx-target` attribute, with the optional `hx-swap` attribute specifying how the new content should be inserted.
@@ -16,11 +17,13 @@ Tailwind is used because styling everything with vanilla CSS is a hellish experi
 
 Using this framework it's possible to create a fast & highly interactible website with minimal effort & without writing a single line of JavaScript (The dream is alive).
 
+
 ## Prerequisites
 
 Only a couple of tools are needed to install & run the project:
 - Go: https://go.dev/doc/install
 - Tailwind standalone CLI:https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.3 (or latest release)
+
 
 ## Initialising the project
 - To initialize the Go project, run `go mod init {name of the project}`
@@ -29,9 +32,11 @@ Only a couple of tools are needed to install & run the project:
 
 And you're all set!
 
+
 ## Development
 - Run `{path/to/tailwindcss} -i {input/file/path}.css -o public/style.css --watch` to watch for changes & rebuild css file using tailwindcss cli, which will automatically insert styles for tailwind utility classes as they are introduced in templates
 - Run `go run main.go` to run the server in development mode - this will look for the 'PORT' environment variable, or bind to port 8000 if this is not available
+
 
 ## Building
 - Run the tailwind command above, but without the `--watch` flag to simply build the css file. it can be run with `--minify` to output a minified css file
