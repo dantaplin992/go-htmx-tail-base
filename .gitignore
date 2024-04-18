@@ -1,0 +1,7 @@
+# Executables
+go-htmx-tail-base
+go-htmx-tail-base.exe
+
+# Macos trash
+**/.DS_Store
+

@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css"></link>
+    <script type="text/javascript" src="htmx-min.js"></script>
+    <script type="text/javascript" src="hyperscript-min.js"></script>
+  </head>
+  <body>
+    <div class="h-screen flex items-center justify-center">
+      <h1
+        class="px-8"
+        _="on mouseenter put 'Click me!' into my innerHTML
+           on mouseleave put 'Hello World!' into my innerHTML"
+        hx-trigger="click"
+        hx-get="/get_clicked"
+        hx-swap="outerHTML"
+      >
+        Hello World!
+      </h1>
+    </div>
+  </body>
+</html>
